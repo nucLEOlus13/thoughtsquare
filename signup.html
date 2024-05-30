@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+        <meta charset="utf-8">
+                <link rel="stylesheet" type="text/css" href="style.css"> <!-- Link to the CSS file -->
+                <link rel="stylesheet" type="text/css" href="header.css">
+                <link rel="stylesheet" type="text/css" href="footer.css">
+                <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Sign Up</title>
+</head>
+
+<style>
+        /* signup.html */
+        .validation-message {
+                position: relative;
+                font-size: 13px;
+                visibility: hidden;
+        }
+
+        .signup-signup h1 {
+                font-size: 30px; /* Adjust the font size as needed */
+                color: #000000;
+                margin: 0;
+        }
+
+        .signup-headers {
+                position: relative; /* Change to relative positioning */
+                display: inline-block; 
+        }
+
+        .signup-boxes {
+                position: relative; /* Change to relative positioning */
+                display: inline-block; 
+                margin: 10px 40px 0px 0px; /* Add padding to create space between sections */
+                height: 20px;
+                width: 170px;
+                border-radius: 5px; /* Set border radius */
+                border: 1px solid #0e4749; /* Set border color */
+        }
+
+        .submit-signup {
+                position: relative; /* Change to relative positioning */
+                display:block;
+                appearance: none; /* Remove default appearance */
+                background-color: #95C623; /* Set background to transparent */
+                width: 70px; /* Set width of button */
+                height: 30px; /* Set height of button */
+                border-radius: 26px; /* Set border radius */
+                color: #0e4749; /* Set text color */
+                border: none; /* Remove border */
+                padding: 0; /* Remove padding */
+                margin: 0;
+                cursor: pointer; /* Add cursor pointer */
+                outline: none; /* Remove default outline */
+                box-shadow: 1px 1px 1px #081B1C;
+        }
+
+        .submit-signup:hover {
+                background: #7E9E1D;
+                border-radius: 26px;
+                box-shadow: inset 1px 1px 1px #081B1C;
+        }
+
+        .container {
+                margin: 20px auto;
+                border: 1px solid #efe7da;
+                padding: 20px;
+                box-sizing: border-box;
+                padding-left: 10vh;
+                background-color: linear-gradient(to top, rgba(126, 158, 29, 0.5), rgba(14, 71, 73, 0.5));
+                max-width: 800px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .preference-button {
+                width: 150px;
+                height: 30px;
+                background: #95C623;
+                color: #0e4749;
+                border: none;
+                cursor: pointer;
+                box-shadow: 1px 1px 1px #081B1C;
+                border-radius: 20px;
+                margin: 10px 10px 20px 0px;
+        }
+
+        .preference-button:hover {
+                background: #7E9E1D;
+                border-radius: 20px;
+                box-shadow: inset 1px 1px 1px #081B1C;
+        }
+
+</style>
+
+<body class="overlay">
+        <header class="headline">
+                <h1><a href="thoughtsquare.html">ThoughtSquare</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="profile.html">
+                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12C22 6.49 17.51 2 12 2C6.49 2 2 6.49 2 12C2 14.9 3.25 17.51 5.23 19.34C5.23 19.35 5.23 19.35 5.22 19.36C5.32 19.46 5.44 19.54 5.54 19.63C5.6 19.68 5.65 19.73 5.71 19.77C5.89 19.92 6.09 20.06 6.28 20.2C6.35 20.25 6.41 20.29 6.48 20.34C6.67 20.47 6.87 20.59 7.08 20.7C7.15 20.74 7.23 20.79 7.3 20.83C7.5 20.94 7.71 21.04 7.93 21.13C8.01 21.17 8.09 21.21 8.17 21.24C8.39 21.33 8.61 21.41 8.83 21.48C8.91 21.51 8.99 21.54 9.07 21.56C9.31 21.63 9.55 21.69 9.79 21.75C9.86 21.77 9.93 21.79 10.01 21.8C10.29 21.86 10.57 21.9 10.86 21.93C10.9 21.93 10.94 21.94 10.98 21.95C11.32 21.98 11.66 22 12 22C12.34 22 12.68 21.98 13.01 21.95C13.05 21.95 13.09 21.94 13.13 21.93C13.42 21.9 13.7 21.86 13.98 21.8C14.05 21.79 14.12 21.76 14.2 21.75C14.44 21.69 14.69 21.64 14.92 21.56C15 21.53 15.08 21.5 15.16 21.48C15.38 21.4 15.61 21.33 15.82 21.24C15.9 21.21 15.98 21.17 16.06 21.13C16.27 21.04 16.48 20.94 16.69 20.83C16.77 20.79 16.84 20.74 16.91 20.7C17.11 20.58 17.31 20.47 17.51 20.34C17.58 20.3 17.64 20.25 17.71 20.2C17.91 20.06 18.1 19.92 18.28 19.77C18.34 19.72 18.39 19.67 18.45 19.63C18.56 19.54 18.67 19.45 18.77 19.36C18.77 19.35 18.77 19.35 18.76 19.34C20.75 17.51 22 14.9 22 12ZM16.94 16.97C14.23 15.15 9.79 15.15 7.06 16.97C6.62 17.26 6.26 17.6 5.96 17.97C4.44 16.43 3.5 14.32 3.5 12C3.5 7.31 7.31 3.5 12 3.5C16.69 3.5 20.5 7.31 20.5 12C20.5 14.32 19.56 16.43 18.04 17.97C17.75 17.6 17.38 17.26 16.94 16.97Z"/>
+                                <path d="M12 6.92969C9.93 6.92969 8.25 8.60969 8.25 10.6797C8.25 12.7097 9.84 14.3597 11.95 14.4197C11.98 14.4197 12.02 14.4197 12.04 14.4197C12.06 14.4197 12.09 14.4197 12.11 14.4197C12.12 14.4197 12.13 14.4197 12.13 14.4197C14.15 14.3497 15.74 12.7097 15.75 10.6797C15.75 8.60969 14.07 6.92969 12 6.92969Z"/>
+                            </svg>
+                        </a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="thoughtsquare.html">
+                            <svg class="logout" width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 12L13 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a></li>
+                    </ul>
+                </nav>
+        </header>
+
+<section class="container" id="content">
+        <section class="signup-signup">
+                <h1>Sign Up to ThoughtSquare</h1>
+                <p>Create an Account:</p>
+        </section>
+        <form action="" id="signup" method="get">
+                <section class="signup-step" id="step1">
+                        <section class="signup-headers"> <!-- Email input field with validation message -->
+                                <label for="email">Email:</label>
+                                <br>
+                                        <input id="email" name="email" type="email" class="signup-boxes">
+                                        <p class="validation-message">Please enter a valid email address</p>
+                        </section>
+
+                        <section class="signup-headers"> <!-- Email input field with validation message -->
+                                <label for="repeat-email">Repeat Email:</label>
+                                <br>
+                                        <input id="repeat-email" name="repeat-email" type="email" class="signup-boxes" >
+                                        <p class="validation-message">Please enter a valid email address</p>
+                        </section>
+
+                        <section class="signup-headers"> <!-- Phone number input field with validation message -->
+                                <label for="phone">Phone number:</label>
+                                <br>
+                                        <input id="phone" name="phone" type="tel" class="signup-boxes" >
+                                        <p class="validation-message">Please enter a valid phone number</p>
+                        </section>
+
+                        <section class="signup-headers"> <!-- Name input field with validation message -->
+                                <label for="name">Name:</label>
+                                <br>
+                                        <input id="name" name="name" type="text" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your name</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="username">Username:</label>
+                                <br>
+                                        <input id="username" name="username" type="text" minlength="3" maxlength="15" class="signup-boxes" >
+                                        <p class="validation-message">Min 3 and max 15 characters</p>
+                        </section>
+
+                        <section class="signup-headers"> <!-- Password input field with validation message -->
+                                <label for="pw">Password:</label>
+                                <br>
+                                        <input id="pw" name="pw" type="password" minlength="8" maxlength="15" class="signup-boxes" >
+                                        <p class="validation-message">Min 8 and max 15 characters</p>
+                        </section>
+
+                        <section class="signup-headers"> <!-- Password input field with validation message -->
+                                <label for="pw-repeat">Repeat Password:</label>
+                                <br>
+                                        <input id="pw-repeat" name="pw-repeat" type="password" minlength="8" maxlength="15" class="signup-boxes" >
+                                        <p class="validation-message">Min 8 and max 15 characters</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="dob">Date of Birth:</label>
+                                <br>
+                                        <input id="dob" name="dob" type="date" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your date of birth</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <input id="terms_and_conditions" name="terms_and_conditions" type="checkbox" class="signup-terms" required>
+                        <label for="terms_and_conditions">I have read and agree to the <a href="terms_and_conditions.html" target="_blank" style="color: black; text-decoration: underline;">Terms and Conditions</a></label>
+                        <br><br>
+                        </section>
+
+                        <button id="next-step" class="submit-signup">Next</button>
+                </section>
+
+                <section class="signup-step" id="step2" style="display: none">
+                        <section class="signup-headers">
+                                <label for="language">Preferred Language:</label>
+                                <br>
+                                        <input id="language" name="language" type="text" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your preferred language</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="country">Country:</label>
+                                <br>
+                                        <input id="country" name="country" type="text" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your country</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="maturity">Maturity Level:</label>
+                                <br>
+                                        <input id="maturity" name="maturity" type="text" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your maturity level</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="time-zone">Time Zone:</label>
+                                <br>
+                                        <input id="time-zone" name="time-zone" type="text" class="signup-boxes" >
+                                        <p class="validation-message">Please enter your time zone</p>
+                        </section>
+
+                        <section class="signup-headers">
+                                <label for="debating-preference">Debating Preference:</label>
+                                <br>
+                                        <button id="debating-preference" name="debating-preference" class="preference-button">Debater</button>
+                                        <button id="debating-preference" name="debating-preference" class="preference-button">Listener</button>
+                                        <button id="debating-preference" name="debating-preference" class="preference-button">Mixed</button>
+                        </section>
+
+                        <section class="submit-signup" id="next-submit">
+                                <input type="submit" value="Submit" id="next-submit" class="submit-signup">
+                        </section>
+                </section>
+
+                <section class="signup-step" id="step3" style="display: none">
+                        <section class="signup-headers">
+                                <p style="font-size: medium;">We sent you a verification code to your email. Check your inbox and please enter it here:</p>
+                                <label for="verification-code">Verification Code:</label>
+                                <br>
+                                        <input id="verification-code" name="verification-code" type="text" class="signup-boxes">
+                                        <p class="validation-message">Please enter the verification code</p>
+                        </section>
+
+                        <section class="submit-signup" id="next-submit">
+                                <button id="next-submit" class="submit-signup"><a href="submission.html">Verify</a></button>
+                        </section>
+                </section>
+        </form>
+
+        <section class="chat">
+                <section class="chatheader">
+                    <p class="chatheader-title">Chatbox</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z"></path></svg>
+                </section>
+
+                <section class="chatbody">
+                    <section class="chatcontainer">
+                        <section class="chatmessage">
+                            <p class="chatmessage-from">How can I help?</p>
+                            <p class="chatmessage-from">Send me any messages regarding e.g. debating, and any other help you might need.</p>
+                            <section id="chatHistory" class="chat-history"></section>
+                        </section>
+
+                        <section class="chat-textfield">
+                            <input type="text" id="userInput" placeholder="Type a message..." class="chat-textfield-input">
+                            <button class="chat-sendbutton" id= "sendButton" onclick="sendMessage()">Send</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+</section>
+
+<footer class="footer">
+        <p>ThoughtSquare 2024</p>
+</footer>
+
+<script src="chatbot.js"></script>
+
+<script>
+var next = document.querySelector("#next-step");
+var next2 = document.querySelector("#next-submit");
+var step1 = document.querySelector("#step1");
+var step2 = document.querySelector("#step2");
+var step3 = document.querySelector("#step3");
+
+next.onclick = function() {
+    step1.style.display = "none";
+    step2.style.display = "block";
+}
+
+next2.onclick = function() {
+    step2.style.display = "none"; 
+    step3.style.display = "block"; 
+}
+
+</script>
+
+</body>
+
+</html>
+

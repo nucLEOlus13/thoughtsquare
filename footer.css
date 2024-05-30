@@ -1,0 +1,16 @@
+.footer {
+    background-color: #0e4749; /* Background color of the footer */
+    color: #efe7da; /* Text color */
+    padding: 20px; /* Padding inside the footer */
+    text-align: center; /* Center-align text */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Align to the bottom */    
+  }
+  
+  .footer p {
+    margin: 0; /* Remove default margin */
+    color: #efe7da;
+    text-decoration: none;
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  

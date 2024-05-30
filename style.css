@@ -1,0 +1,410 @@
+.overlay {
+  background-color: #efe7da;
+  background: linear-gradient(to bottom, rgba(126, 158, 29, 0.5), rgba(14, 71, 73, 0.5));
+  min-height: calc(100% - 100px); /* Calculate the height of the main content area */
+}
+
+.container {
+  padding: 40px 150px 20px 150px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
+html, body {
+  height: 100%; /* Set the height of the html and body elements to 100% */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+
+a {
+  color: #0E4749; /* Set the color of the links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.chat{
+  position: fixed;
+  right: 50px;
+  bottom: 0px;
+  width: 250px;
+  padding: 5px 18px;
+  background: #95C623;
+  color: #0E4749;
+  border-radius: 20px 20px 0px 0px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 1px 1px 1px #081B1C;
+}
+
+.chat:hover {
+  background: #7E9E1D;
+}
+
+.chatheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0px 15px 0px 15px;
+}
+
+.chatheader svg {
+  width: 25px;
+}
+
+.chatbody {
+  background: #efe7da;
+  width: 230px;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 12px;
+  overflow-y: auto; /* Add overflow-y property */
+  overflow-x: hidden; /* Add overflow-x property */
+  scrollbar-width: none; /* Make the scrollbar thinner */
+  scrollbar-color: #0e4749 #efe7da;
+  max-height: 300px; /* Set max-height to limit the height of the chat body */
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.chatmessage {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbody .chatcontainer .chatmessage .chatmessage-from {
+  background: #0e4749;
+  color: #efe7da;
+  border-radius: 0px 10px 10px 10px;
+  padding: 10px;
+  margin-right: 70px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.chatbody .chatcontainer .chatmessage .chatmessage-to {
+  margin-left: 70px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  background: #0e4749;
+  color: #efe7da;
+  padding: 10px;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.chatmessage .message.to {
+  margin-left: 70px;
+  margin-bottom: 15px;
+  background: #0e4749;
+  color: #efe7da;
+  padding: 10px;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.chatmessage .message.from {
+  background: #0e4749;
+  color: #efe7da;
+  border-radius: 0px 10px 10px 10px;
+  padding: 10px;
+  margin-right: 70px;
+  margin-bottom: 15px;
+}
+
+.chat-textfield {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.chat-textfield .chat-textfield-input {
+  appearance: none; /* Remove default appearance */
+  border-radius: 20px; /* Set border radius */
+  height: 20px;
+  color: #0e4749; /* Set text color */
+  border: none; /* Remove border */
+  padding: 5px; 
+  cursor: text; /* Add cursor text */
+  outline: none; /* Remove default outline */
+}
+
+.chat-textfield .chat-textfield-input placeholder {
+  color: #0e4749; /* Set placeholder color */
+}
+
+.chat-textfield .chat-sendbutton {
+  position: relative; /* Change to relative positioning */
+  display:block;
+  appearance: none; /* Remove default appearance */
+  background-color: #95C623; /* Set background to transparent */
+  height: 30px; /* Set height of button */
+  border-radius: 20px; /* Set border radius */
+  color: #0E4749; /* Set text color */
+  border: none; /* Remove border */
+  padding: 5px 10px 5px 10px; /* Remove padding */
+  margin: 0 0 0 3px; /* Remove margin */
+  cursor: pointer; /* Add cursor pointer */
+  outline: none; /* Remove default outline */
+  box-shadow: 1px 1px 1px #081B1C;
+}
+
+.chat-textfield .chat-sendbutton:hover {
+  background: #7E9E1D;
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.chatbody {
+  display: block;
+}
+
+.chatbody--hidden {
+  display: none;
+}
+
+#title {
+  width: 300px; /* Set the width of the textarea */
+  height: 35px; /* Set the height of the textarea */
+}
+
+#description {
+  width: 300px; /* Set the width of the textarea */
+  height: 100px; /* Set the height of the textarea */
+}
+
+/* create.html */
+/* .creating {
+    position: relative;
+    padding-top: 50px;
+    background-color: #efe7da;
+    padding: 20px; 
+    border-radius: 7px;
+    display:block;
+} */
+
+.create {
+  position: relative; /* Change to relative positioning */
+  padding: 10px 20px 10px 20px;
+  margin: 20px auto; /* Center horizontally and add space */
+  background: #95C623;
+  border-radius: 26px; /*previously 7px*/
+  text-align: center; /* Center the link */
+  box-shadow: 1px 1px 1px #081B1C;
+  color: #0E4749;
+  font-size: 25px;
+  border-style: none;
+  display: block;
+  cursor: pointer;
+}
+
+.create:hover {
+  background: #7E9E1D;
+  border-radius: 26px;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+/* thoughtsquare.html */
+.welcome {
+    position: relative; /* Change to relative positioning */
+    width: 60%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding-top: 0; /* Add padding to create space between sections */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 36px; /* Adjust the font size as needed */
+    line-height: 1.5; /* Adjust the line height as needed */
+    text-align: center;
+    color: #000000;
+}
+
+.loginsentence {
+  position: relative; /* Change to relative positioning */
+  width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center horizontally */
+  padding-top: 50px; /* Add padding to create space between sections */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 36px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Adjust the line height as needed */
+  text-align: center;
+  color: #000000;
+}
+
+.login {
+  position: relative; /* Change to relative positioning */
+  width: 140px;
+  height: 52px;
+  margin: 20px auto; /* Center horizontally and add space */
+  background: #95C623;
+  border-radius: 26px; /*previously 7px*/
+  text-align: center; /* Center the link */
+  box-shadow: 1px 1px 1px #081B1C;
+}
+
+.login a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 52px; /* Vertically center the text */
+  color: #0E4749;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.login a:hover {
+  background: #7E9E1D;
+  border-radius: 26px;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.topics {
+  width: 150px;
+  height: 30px;
+  background: #95C623;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #081B1C;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.topics:hover {
+  background: #7E9E1D;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.searchbar {
+  background: #0E4749;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #081B1C;
+  width: 630px;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.searchbar-input {
+  background: #efe7da;
+  border-radius: 5px;
+  height: 15px;
+  width: 520px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  margin: 5px;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.searchbar-button {
+  background: #95C623;
+  color: #0E4749;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #081B1C;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding: 5px 10px 5px 10px;
+}
+
+.searchbar-button:hover {
+  background: #7E9E1D;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.debates-box-outside {
+  background: #0E4749;
+  box-shadow: 3px 3px 3px #081B1C;
+  border-radius: 10px;
+  display: inline-block;
+  width: 185px;
+  height: 195px;
+  padding: 10px;
+  margin: 5px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.debates-box-outside .debates-box-inside {
+  background: #efe7da;
+  box-shadow: inset 3px 3px 3px #081B1C;
+  border-radius: 10px;
+  height: 140px;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+}
+
+.debates-box-outside .debates-box-inside h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.debates-box-outside .debates-box-inside p {
+  font-size: 16px;
+}
+
+.join-button {
+  background: #95C623;
+  color: #0E4749;
+  border: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #081B1C;
+  border-radius: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+}
+
+.join-button:hover {
+  background: #7E9E1D;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+
+/* login.html */
+.username-login {
+    position: relative; /* Change to relative positioning */
+    display:block;
+    padding: 0px 0px 10px 0px;
+}
+
+.password-login {
+    position: relative; /* Change to relative positioning */
+    display:block;
+    padding: 0px 0px 10px 0px;
+}
+
+.submit-login {
+  position: relative; /* Change to relative positioning */
+  display:block;
+  appearance: none; /* Remove default appearance */
+  background-color: #95C623; /* Set background to transparent */
+  width: 70px; /* Set width of button */
+  height: 30px; /* Set height of button */
+  border-radius: 26px; /* Set border radius */
+  color: #0E4749; /* Set text color */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  margin: 0;
+  cursor: pointer; /* Add cursor pointer */
+  outline: none; /* Remove default outline */
+  box-shadow: 1px 1px 1px #081B1C;
+}
+
+.submit-login:hover {
+  background: #7E9E1D;
+  border-radius: 26px;
+  box-shadow: inset 1px 1px 1px #081B1C;
+}
+
+.benefits-debating {
+  background-color: #0E4749;
+  color: #efe7da;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #081B1C;
+}

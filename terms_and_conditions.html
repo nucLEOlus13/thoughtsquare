@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Terms and Conditions</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="header.css">
+        <link rel="stylesheet" type="text/css" href="footer.css">
+    </head>
+    <header class="headline">
+        <h1><a href="thoughtsquare.html" style="color: #efe7da">ThoughtSquare</a></h1>
+        <nav>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="thoughtsquare.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body class="overlay">
+        <section class="container">
+        <h1>Terms and Conditions</h1>
+        <p>By signing up to ThoughtSquare, you agree to the following:</p>
+        <ul>
+            <li>ThoughtSquare is not responsible for any content posted by its users.</li>
+            <li>ThoughtSquare is not responsible for any damage caused by its users.</li>
+            <li>ThoughtSquare is not responsible for any illegal activities conducted by its users.</li>
+        </ul>
+        </section>
+
+        <section class="chat">
+            <section class="chatheader">
+                <p class="chatheader-title">Chatbox</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 3H14C18.4183 3 22 6.58172 22 11C22 15.4183 18.4183 19 14 19V22.5C9 20.5 2 17.5 2 11C2 6.58172 5.58172 3 10 3ZM12 17H14C17.3137 17 20 14.3137 20 11C20 7.68629 17.3137 5 14 5H10C6.68629 5 4 7.68629 4 11C4 14.61 6.46208 16.9656 12 19.4798V17Z"></path></svg>
+            </section>
+
+            <section class="chatbody">
+                <section class="chatcontainer">
+                    <section class="chatmessage">
+                        <p class="chatmessage-from">How can I help?</p>
+                        <p class="chatmessage-from">Send me any messages regarding e.g. debating, and any other help you might need.</p>
+                        <section id="chatHistory" class="chat-history"></section>
+                    </section>
+
+                    <section class="chat-textfield">
+                        <input type="text" id="userInput" placeholder="Type a message..." class="chat-textfield-input">
+                        <button class="chat-sendbutton" id= "sendButton" onclick="sendMessage()">Send</button>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </body>
+    <!-- section about how thoughtsquare's users have to be respectful etc-->
+
+    <script src="chatbot.js"></script>
+
+    <footer class="footer">
+        <p>ThoughtSquare 2024</p>
+    </footer>
+</html>

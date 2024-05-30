@@ -1,0 +1,59 @@
+.headline {
+    background-color: #0e4749;
+    color: #efe7da;
+    padding: 10px 20px 10px 20px; /* Add padding to top and bottom */
+}
+
+.headline h1 a{
+    display: inline; /* Make the h1 inline */
+    font-size: 36px; /* Adjust the font size as needed */
+    text-decoration: none;
+    color: #efe7da;
+}
+
+.headline h1 a:hover {
+    color: #95C623; /* Change text color on hover */
+}
+
+.headline nav ul {
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Move the navigation links to the right */
+    text-align: right; /* Align list items to the right */
+    
+}
+
+.headline nav ul li {
+    display: inline-block; /* Display list items inline */
+    margin-left: 20px; /* Add margin between list items */
+}
+
+
+.headline nav ul li a {
+  color: #efe7da;
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+.headline nav ul li a svg {
+  vertical-align: middle; /* Align SVG icons vertically */
+  margin-bottom: 3px;;
+}
+
+.headline nav ul li a:hover svg path {
+    color: #95C623; /* Change SVG icon color on hover */
+}
+
+.headline .logout {
+  stroke: #efe7da; /* Change text color on hover */
+}
+
+.headline .logout:hover {
+  stroke: #95C623; /* Change text color on hover */
+}
+
+.headline nav ul li a:hover {
+  background-color: #0e4749; /* Change background color on hover */
+  color: #95C623; /* Change text color on hover */
+}
